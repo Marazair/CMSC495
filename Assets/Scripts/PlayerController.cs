@@ -2,27 +2,50 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : GridMover
 {
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
-
+        base.Start();
     }
 
     // Update is called once per frame
     void Update()
     {
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
+        int horizontal = 0;
+        int vertical = 0;
 
-        Debug.Log(horizontal);
-        Debug.Log(vertical);
-
-        Vector2 position = transform.position;
-        position.x += horizontal * Time.deltaTime * 3.0f;
-        position.y += vertical * Time.deltaTime * 3.0f;
+        horizontal = (int) Input.GetAxisRaw("Horizontal");
+        vertical = (int) Input.GetAxisRaw("Vertical");
         
-        transform.position = position;
+        if (horizontal != 0)
+            vertical = 0;
+
+        if (horizontal != 0 || vertical != 0)
+            AttemptMove<CaveWall> (horizontal, vertical);
+        
+    }
+
+    protected override void AttemptMove <T> (int xDir, int yDir) 
+    {
+        base.AttemptMove <T> (xDir, yDir);
+
+        RaycastHit2D hit;
+    }
+
+    protected override void OnCantMove<T>(T component) 
+    {
+        
+    }
+
+    private void Restart()
+    {
+        Application.LoadLevel(Application.loadedLevel);
+    }
+
+    private void LoseLife()
+    {
+        GameManager.instance.lives--;
     }
 }
