@@ -30,8 +30,6 @@ public class PlayerController : GridMover
     protected override void AttemptMove <T> (int xDir, int yDir) 
     {
         base.AttemptMove <T> (xDir, yDir);
-
-        RaycastHit2D hit;
     }
 
     protected override void OnCantMove<T>(T component) 

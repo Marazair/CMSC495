@@ -18,9 +18,7 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private void GameOver() {
+        enabled = false;
     }
 }

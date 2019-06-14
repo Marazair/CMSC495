@@ -11,10 +11,4 @@ public class Loader : MonoBehaviour
         if (GameManager.instance == null)
             Instantiate(gameManager);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
