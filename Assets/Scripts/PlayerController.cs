@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : GridMover
 {
@@ -13,6 +14,9 @@ public class PlayerController : GridMover
     // Update is called once per frame
     void Update()
     {
+        if(!GameManager.instance.isPlayerTurn)
+            return;
+
         int horizontal = 0;
         int vertical = 0;
 
@@ -29,7 +33,9 @@ public class PlayerController : GridMover
 
     protected override void AttemptMove <T> (int xDir, int yDir) 
     {
+        GameManager.instance.isPlayerTurn = false;
         base.AttemptMove <T> (xDir, yDir);
+        GameManager.instance.isPlayerTurn = true;
     }
 
     protected override void OnCantMove<T>(T component) 
@@ -37,13 +43,26 @@ public class PlayerController : GridMover
         
     }
 
+    private void OnTriggerEnter2D(Collider2D other) {
+        if(other.tag == "Exit") {
+            Scene currentScene = SceneManager.GetActiveScene();
+            if (GameManager.instance.HasNextScene()) {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
+            else
+                SceneManager.LoadScene("Credits");
+        }
+
+    }
+
     private void Restart()
     {
-        Application.LoadLevel(Application.loadedLevel);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     private void LoseLife()
     {
         GameManager.instance.lives--;
+        Restart();
     }
 }
