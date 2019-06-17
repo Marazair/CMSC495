@@ -33,9 +33,7 @@ public class PlayerController : GridMover
 
     protected override void AttemptMove <T> (int xDir, int yDir) 
     {
-        GameManager.instance.isPlayerTurn = false;
         base.AttemptMove <T> (xDir, yDir);
-        GameManager.instance.isPlayerTurn = true;
     }
 
     protected override void OnCantMove<T>(T component) 
@@ -63,6 +61,9 @@ public class PlayerController : GridMover
     private void LoseLife()
     {
         GameManager.instance.lives--;
-        Restart();
+        if(GameManager.instance.lives > 0)
+            Restart();
+        else
+            GameManager.instance.GameOver();
     }
 }

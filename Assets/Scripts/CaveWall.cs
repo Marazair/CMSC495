@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CaveWall : MonoBehaviour
-{
-    // Start is called before the first frame update
+public class CaveWall : Obstacle {
+    
 }

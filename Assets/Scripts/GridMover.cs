@@ -10,6 +10,7 @@ public abstract class GridMover : MonoBehaviour
     private BoxCollider2D boxCollider;
     private Rigidbody2D rb2D;
     private float inverseMoveTime;
+    private bool moving;
 
     // Start is called before the first frame update
     protected virtual void Start()
@@ -17,6 +18,7 @@ public abstract class GridMover : MonoBehaviour
         boxCollider = GetComponent<BoxCollider2D>();
         rb2D = GetComponent<Rigidbody2D>();
         inverseMoveTime = 1f / moveTime;
+        moving = false;
     }
 
     protected IEnumerator SmoothMovement (Vector3 end) 
@@ -30,6 +32,8 @@ public abstract class GridMover : MonoBehaviour
             sqrRemainingDistance = (transform.position - end).sqrMagnitude;
             yield return null;
         }
+
+        moving = false;
     }
 
     protected bool Move (int xDir, int yDir, out RaycastHit2D hit) 
@@ -43,7 +47,11 @@ public abstract class GridMover : MonoBehaviour
 
         if (hit.transform == null)
         {
-            StartCoroutine(SmoothMovement (end));
+            if(moving == false) 
+            {
+                moving = true;
+                StartCoroutine(SmoothMovement (end));
+            }
             return true;
         }
 

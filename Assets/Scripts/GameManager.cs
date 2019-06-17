@@ -20,8 +20,8 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    private void GameOver() {
-        enabled = false;
+    public void GameOver() {
+        SceneManager.LoadScene("Main Menu");
     }
 
     public bool HasNextScene() {
