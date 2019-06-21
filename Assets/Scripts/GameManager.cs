@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void GameOver() {
-        SceneManager.LoadScene("Main Menu");
+        SceneManager.LoadScene("MainMenu");
     }
 
     public bool HasNextScene() {

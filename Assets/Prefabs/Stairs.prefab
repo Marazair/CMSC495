@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8956846564446003846}
   - component: {fileID: 8956846564446003841}
   - component: {fileID: 8956846564446003840}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Stairs
   m_TagString: Exit
   m_Icon: {fileID: 0}
@@ -67,7 +67,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1661389651
-  m_SortingLayer: 3
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 2784865045386123130, guid: 514357b250975b648b76689b56bda498,
     type: 3}
