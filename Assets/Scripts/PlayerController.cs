@@ -27,18 +27,20 @@ public class PlayerController : GridMover
             vertical = 0;
 
         if (horizontal != 0 || vertical != 0)
-            AttemptMove<CaveWall> (horizontal, vertical);
+            AttemptMove<Obstacle> (horizontal, vertical);
         
     }
 
     protected override void AttemptMove <T> (int xDir, int yDir) 
     {
+        if (isMoving())
+            return;
         base.AttemptMove <T> (xDir, yDir);
     }
 
-    protected override void OnCantMove<T>(T component) 
+    protected override void OnCantMove<T>(T obstacle) 
     {
-        
+        obstacle.OnPlayerInteract(this);
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
@@ -58,7 +60,7 @@ public class PlayerController : GridMover
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    private void LoseLife()
+    public void LoseLife()
     {
         GameManager.instance.lives--;
         if(GameManager.instance.lives > 0)

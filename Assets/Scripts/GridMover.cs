@@ -58,7 +58,7 @@ public abstract class GridMover : MonoBehaviour
         return false;
     }
     protected virtual void AttemptMove <T> (int xDir, int yDir) 
-        where T : Component
+        where T : Obstacle
     {
         RaycastHit2D hit;
         bool canMove = Move (xDir, yDir, out hit);
@@ -71,6 +71,10 @@ public abstract class GridMover : MonoBehaviour
         if (!canMove && hitComponent != null)
             OnCantMove(hitComponent);
     }
+
+    public bool isMoving() {
+        return moving;
+    }
     protected abstract void OnCantMove<T>(T component)
-        where T:Component;
+        where T:Obstacle;
 }

@@ -4,7 +4,8 @@ using UnityEngine;
 
 public abstract class Obstacle : MonoBehaviour
 {
-    public virtual void OnPlayerInteract() {
-        
+    public virtual void OnPlayerInteract(PlayerController player) {
+        if(player.isMoving()) 
+            return;
     }
 }
