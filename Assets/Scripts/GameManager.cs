@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     }
 
     public bool HasNextScene() {
-        if (SceneManager.GetActiveScene().buildIndex < SceneManager.sceneCount)
+        if (SceneManager.GetActiveScene().buildIndex < SceneManager.sceneCountInBuildSettings)
             return true;
         return false;
     }
