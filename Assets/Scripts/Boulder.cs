@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class Boulder : GridMover, Obstacle
 {
@@ -13,11 +14,7 @@ public class Boulder : GridMover, Obstacle
     }
 
     public void OnPlayerInteract(PlayerController player) {
-        if (player.isMoving()) {
-            return;
-        }
-
-        if (isMoving()) {
+        if (player.isMoving() || isMoving()) {
             return;
         }
 
@@ -40,5 +37,12 @@ public class Boulder : GridMover, Obstacle
 
     protected override void OnCantMove<T>(T obstacle) {
         
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.tag == "Hole") {
+            objectCollider.enabled = false;
+            other.enabled = false;
+        }
     }
 }
