@@ -35,6 +35,7 @@ public abstract class GridMover : MonoBehaviour
         }
 
         moving = false;
+        stopMove = false;
     }
 
     protected bool Move (int xDir, int yDir, out RaycastHit2D hit) 
