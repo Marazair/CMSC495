@@ -4,10 +4,11 @@ using UnityEngine;
 public class Transport : MonoBehaviour {
         
     public Transform teleportTarget;
-    public GameObject Player;
+    public PlayerController player;
 
     void OnTriggerEnter2D(Collider2D other)
-    {    
-        Player.transform.position = teleportTarget.transform.position;
+    {   
+        player.InterruptMove();
+        player.transform.position = teleportTarget.transform.position;
     }
 }

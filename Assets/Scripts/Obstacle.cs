@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class Obstacle : MonoBehaviour
 {
     public virtual void OnPlayerInteract(PlayerController player) {
-        if(player.isMoving()) 
+        if(player.IsMoving()) 
             return;
     }
 }
