@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: 08563483719e7dd49b416dbe54f1e599
+  - enabled: 0
+    path: Assets/Scenes/KmcKee.unity
+    guid: 4ab3df23133887f40bfbb37a543bc934
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}
