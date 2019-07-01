@@ -44,7 +44,7 @@ public class PlayerController : GridMover
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if(other.tag == "Exit") {
+        if (other.tag == "Exit") {
             Scene currentScene = SceneManager.GetActiveScene();
             if (GameManager.instance.HasNextScene()) {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -52,7 +52,6 @@ public class PlayerController : GridMover
             else
                 SceneManager.LoadScene("Credits");
         }
-
     }
 
     private void Restart()
