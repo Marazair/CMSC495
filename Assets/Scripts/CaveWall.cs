@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CaveWall : Obstacle {
+public class CaveWall : MonoBehaviour, Obstacle {
     
-    public override void OnPlayerInteract(PlayerController player) {
-        
+    public void OnPlayerInteract(PlayerController player) {
+        if (player.isMoving()) {
+            return;
+        }
     }
 }

@@ -2,10 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Obstacle : MonoBehaviour
+public interface Obstacle
 {
-    public virtual void OnPlayerInteract(PlayerController player) {
-        if(player.isMoving()) 
-            return;
-    }
+    void OnPlayerInteract(PlayerController player);
 }

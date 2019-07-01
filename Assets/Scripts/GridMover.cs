@@ -7,7 +7,7 @@ public abstract class GridMover : MonoBehaviour
     public float moveTime = .1f;
     public LayerMask blockingLayer;
 
-    private BoxCollider2D boxCollider;
+    private Collider2D objectCollider;
     private Rigidbody2D rb2D;
     private float inverseMoveTime;
     private bool moving;
@@ -15,7 +15,7 @@ public abstract class GridMover : MonoBehaviour
     // Start is called before the first frame update
     protected virtual void Start()
     {
-        boxCollider = GetComponent<BoxCollider2D>();
+        objectCollider = GetComponent<Collider2D>();
         rb2D = GetComponent<Rigidbody2D>();
         inverseMoveTime = 1f / moveTime;
         moving = false;
@@ -41,9 +41,9 @@ public abstract class GridMover : MonoBehaviour
         Vector2 start = transform.position;
         Vector2 end = start + new Vector2(xDir, yDir);
         
-        boxCollider.enabled = false;
+        objectCollider.enabled = false;
         hit = Physics2D.Linecast(start, end, blockingLayer);
-        boxCollider.enabled = true;
+        objectCollider.enabled = true;
 
         if (hit.transform == null)
         {
