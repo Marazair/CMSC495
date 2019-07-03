@@ -32,8 +32,10 @@ public class projectile : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             DestroyProjectile();
+
         }
     }
+
     void DestroyProjectile()
     {
         Destroy(gameObject);

@@ -26,14 +26,14 @@ public class gem : MonoBehaviour
         {
             Destroy(gameObject);
             gemsCollected = gemsCollected + 1;
-            if (gemsCollected == 3)
-            {
-                specialWall = GameObject.FindGameObjectWithTag("SpecialWall");
-                Destroy(specialWall);
+          
+        }
+        if (gemsCollected == 3)
+        {
+            specialWall = GameObject.FindGameObjectWithTag("SpecialWall");
+            Destroy(specialWall);
 
-            }
         }
 
-       
     }
 }
