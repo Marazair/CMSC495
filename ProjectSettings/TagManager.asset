@@ -7,6 +7,7 @@ TagManager:
   - Exit
   - Lever
   - Spike
+  - Key
   layers:
   - Default
   - TransparentFX
