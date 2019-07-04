@@ -2,18 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class projectile : MonoBehaviour
+public class Projectile : MonoBehaviour
 {
     public float speed;
 
-    private Transform player;
+    public PlayerController player;
     private Vector2 target;
 
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-        target = new Vector2(player.position.x, player.position.y);
+        target = new Vector2(player.transform.position.x, player.transform.position.y);
     }
 
     // Update is called once per frame
@@ -27,18 +26,8 @@ public class projectile : MonoBehaviour
         }
     }
 
-    void OnTrggerEnter2d(Collider2D other)
-    {
-        if(other.CompareTag("Player"))
-        {
-            DestroyProjectile();
-
-        }
-    }
-
     void DestroyProjectile()
     {
         Destroy(gameObject);
-
     }
 }

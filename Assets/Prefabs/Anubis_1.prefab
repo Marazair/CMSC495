@@ -66,10 +66,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 406019959
-  m_SortingLayer: 3
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1f6bb025f98a6664595eccea9992bd58, type: 3}
+  m_SortingLayerID: 716291269
+  m_SortingLayer: 2
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300004, guid: 5baa76af94c727c42a373722f6993d8d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -94,5 +94,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeBtwShots: 0
   startTimeBtwShots: 2
-  projectile: {fileID: 4668723103498905160, guid: 8fe42c9c42b519e47ae41734bfb2411b,
+  projectile: {fileID: 4668723103498905161, guid: 8fe42c9c42b519e47ae41734bfb2411b,
     type: 3}
+  player: {fileID: 0}

@@ -9,14 +9,12 @@ public class Anubis : MonoBehaviour{
 
     public float startTimeBtwShots = 2;
 
-    public GameObject projectile;
+    public Projectile projectile;
 
-    
-    private Transform player;
+    public PlayerController player;
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
         timeBtwShots = startTimeBtwShots;
     }
 
@@ -26,7 +24,8 @@ public class Anubis : MonoBehaviour{
         
         if(timeBtwShots <=0 )
         {
-            Instantiate(projectile, transform.position, Quaternion.identity);
+            Projectile clone = Instantiate(projectile, transform.position, Quaternion.identity);
+            clone.player = player;
             timeBtwShots = startTimeBtwShots;
         }
         else {
