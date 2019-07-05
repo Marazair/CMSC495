@@ -47,6 +47,7 @@ public class PlayerController : GridMover
         if (other.tag == "Exit") {
             Scene currentScene = SceneManager.GetActiveScene();
             if (GameManager.instance.HasNextScene()) {
+                GameManager.instance.lives++;
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
             else
@@ -66,8 +67,10 @@ public class PlayerController : GridMover
     public void LoseLife()
     {
         GameManager.instance.lives--;
-        if(GameManager.instance.lives > 0)
+        if(GameManager.instance.lives > 0) {
+            Gem.ResetGems();
             Restart();
+        }
         else
             GameManager.instance.GameOver();
     }

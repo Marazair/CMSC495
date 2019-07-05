@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class gem : MonoBehaviour
+public class Gem : MonoBehaviour
 {
 
     private GameObject specialWall;
 
-        private int gemsCollected = 0;
+    private static int gemsCollected = 0;
     // Start is called before the    first frame update
     void Start()
     {
@@ -35,5 +35,9 @@ public class gem : MonoBehaviour
 
         }
 
+    }
+
+    public static void ResetGems() {
+        gemsCollected = 0;
     }
 }
