@@ -11,6 +11,7 @@ public abstract class GridMover : MonoBehaviour
     private Rigidbody2D rb2D;
     private float inverseMoveTime;
     private bool moving;
+    private bool stopMove = false;
 
     // Start is called before the first frame update
     protected virtual void Start()
@@ -25,7 +26,7 @@ public abstract class GridMover : MonoBehaviour
     {
         float sqrRemainingDistance = (transform.position - end).sqrMagnitude;
 
-        while (sqrRemainingDistance > float.Epsilon) 
+        while (sqrRemainingDistance > float.Epsilon && stopMove == false) 
         {
             Vector3 newPosition = Vector3.MoveTowards (rb2D.position, end, inverseMoveTime * Time.deltaTime);
             rb2D.MovePosition(newPosition);
@@ -34,6 +35,7 @@ public abstract class GridMover : MonoBehaviour
         }
 
         moving = false;
+        stopMove = false;
     }
 
     protected bool Move (int xDir, int yDir, out RaycastHit2D hit) 
@@ -72,9 +74,14 @@ public abstract class GridMover : MonoBehaviour
             OnCantMove(hitComponent);
     }
 
-    public bool isMoving() {
+    public bool IsMoving() {
         return moving;
     }
+
+    public void InterruptMove() {
+        stopMove = true;
+    }
+
     protected abstract void OnCantMove<T>(T component)
         where T:Obstacle;
 }

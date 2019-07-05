@@ -35,7 +35,7 @@ public class PlayerController : GridMover
 
     protected override void AttemptMove <T> (int xDir, int yDir) 
     {
-        if (isMoving())
+        if (IsMoving())
             return;
         base.AttemptMove <T> (xDir, yDir);
     }
@@ -72,6 +72,9 @@ public class PlayerController : GridMover
             }
         }
         if (other.tag == "Hole") {
+            LoseLife();
+        }
+        if (other.tag == "Kill") {
             LoseLife();
         }
     }
