@@ -71,6 +71,9 @@ public class PlayerController : GridMover
                 other.enabled = false;
             }
         }
+        if (other.tag == "Hole") {
+            LoseLife();
+        }
     }
 
     private void Restart()

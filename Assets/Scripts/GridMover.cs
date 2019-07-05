@@ -7,7 +7,7 @@ public abstract class GridMover : MonoBehaviour
     public float moveTime = .1f;
     public LayerMask blockingLayer;
 
-    private Collider2D objectCollider;
+    protected Collider2D objectCollider;
     private Rigidbody2D rb2D;
     private float inverseMoveTime;
     private bool moving;

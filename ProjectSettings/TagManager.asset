@@ -11,6 +11,7 @@ TagManager:
   - Lever
   - Spike
   - Key
+  - Hole
   layers:
   - Default
   - TransparentFX
