@@ -94,6 +94,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeBtwShots: 0
   startTimeBtwShots: 2
-  projectile: {fileID: 4668723103498905161, guid: 8fe42c9c42b519e47ae41734bfb2411b,
+  projectile: {fileID: -3206617409456818925, guid: 8fe42c9c42b519e47ae41734bfb2411b,
     type: 3}
   player: {fileID: 0}
