@@ -5,7 +5,7 @@ using UnityEngine;
 public class CaveWall : MonoBehaviour, Obstacle {
     
     public void OnPlayerInteract(PlayerController player) {
-        if (player.isMoving()) {
+        if (player.IsMoving()) {
             return;
         }
     }

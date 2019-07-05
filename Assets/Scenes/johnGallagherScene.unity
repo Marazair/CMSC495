@@ -260,7 +260,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.1620655
+  orthographic size: 5.222562
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -284,7 +284,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963895744}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: -0.09, y: 0.02, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -534,11 +534,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7291483207752153322}
     m_Modifications:
-    - target: {fileID: 8793032057550784460, guid: 3df4e8ea451d3234da837a2d96ba76b4,
-        type: 3}
-      propertyPath: m_Name
-      value: Wall
-      objectReference: {fileID: 0}
     - target: {fileID: 8793032057550784459, guid: 3df4e8ea451d3234da837a2d96ba76b4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -594,15 +589,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8793032057550784457, guid: 3df4e8ea451d3234da837a2d96ba76b4,
+    - target: {fileID: 8793032057550784460, guid: 3df4e8ea451d3234da837a2d96ba76b4,
         type: 3}
-      propertyPath: m_SortingLayerID
-      value: 716291269
-      objectReference: {fileID: 0}
-    - target: {fileID: 8793032057550784457, guid: 3df4e8ea451d3234da837a2d96ba76b4,
-        type: 3}
-      propertyPath: m_SortingLayer
-      value: 2
+      propertyPath: m_Name
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 8793032057550784456, guid: 3df4e8ea451d3234da837a2d96ba76b4,
         type: 3}
@@ -2354,6 +2344,16 @@ PrefabInstance:
       propertyPath: m_Tiles.Array.data[127].second.m_ColliderType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8793032057550784457, guid: 3df4e8ea451d3234da837a2d96ba76b4,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 716291269
+      objectReference: {fileID: 0}
+    - target: {fileID: 8793032057550784457, guid: 3df4e8ea451d3234da837a2d96ba76b4,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3df4e8ea451d3234da837a2d96ba76b4, type: 3}
 --- !u!1001 &3209532598193015745
@@ -2502,21 +2502,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 6.140069
       objectReference: {fileID: 0}
-    - target: {fileID: -2063715657201296275, guid: 7a98ee8e386908e43b792cb58648b07a,
-        type: 3}
-      propertyPath: m_UsedByEffector
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -2063715657201296275, guid: 7a98ee8e386908e43b792cb58648b07a,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -2063715657201296275, guid: 7a98ee8e386908e43b792cb58648b07a,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3114600362207028099, guid: 7a98ee8e386908e43b792cb58648b07a,
         type: 3}
       propertyPath: blockingLayer.m_Bits
@@ -2531,6 +2516,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingLayer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -2063715657201296275, guid: 7a98ee8e386908e43b792cb58648b07a,
+        type: 3}
+      propertyPath: m_UsedByEffector
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2063715657201296275, guid: 7a98ee8e386908e43b792cb58648b07a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2063715657201296275, guid: 7a98ee8e386908e43b792cb58648b07a,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a98ee8e386908e43b792cb58648b07a, type: 3}

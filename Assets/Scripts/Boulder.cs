@@ -14,7 +14,7 @@ public class Boulder : GridMover, Obstacle
     }
 
     public void OnPlayerInteract(PlayerController player) {
-        if (player.isMoving() || isMoving()) {
+        if (player.IsMoving() || IsMoving()) {
             return;
         }
 
