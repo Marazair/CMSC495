@@ -8,6 +8,9 @@ TagManager:
   - gem
   - SpecialWall
   - Projectile
+  - Lever
+  - Spike
+  - Key
   layers:
   - Default
   - TransparentFX

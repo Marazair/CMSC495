@@ -5,12 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : GridMover
 {
+
+    public bool hasKey = false;
     // Start is called before the first frame update
     protected override void Start()
     {
         base.Start();
     }
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -38,6 +40,8 @@ public class PlayerController : GridMover
         base.AttemptMove <T> (xDir, yDir);
     }
 
+
+
     protected override void OnCantMove<T>(T obstacle) 
     {
         obstacle.OnPlayerInteract(this);
@@ -56,6 +60,16 @@ public class PlayerController : GridMover
 
         if (other.tag == "Projectile") {
             LoseLife();
+        }
+        if (other.tag == "Spike") {
+            LoseLife();
+        }
+        if (other.tag == "Key") {
+            if (hasKey == false) {
+                other.gameObject.transform.SetParent(this.transform);
+                hasKey = true;
+                other.enabled = false;
+            }
         }
     }
 
