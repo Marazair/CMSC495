@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5019633415942388263}
   - component: {fileID: 6924571345552882043}
-  - component: {fileID: 3209532597922738885}
+  - component: {fileID: 7704112685561839504}
   - component: {fileID: 8787130384791418947}
   m_Layer: 0
   m_Name: gem 1
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3209532597922738885
+--- !u!114 &7704112685561839504
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
