@@ -19,11 +19,14 @@ EditorBuildSettings:
     guid: 1c90c4c89037d8a4d924a394feb37b5e
   - enabled: 1
     path: Assets/Scenes/MarkLevel.unity
-    guid: 44605419f9368516cacb67c73b929c6a
+    guid: 032de71b61bf36345a2e19bb5c54e4aa
   - enabled: 1
     path: Assets/Scenes/johnGallagherScene.unity
-    guid: 72c63fa6cff62c948947b13966810ee1
+    guid: 3131f143e901dfe4980192f779750c86
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: 08563483719e7dd49b416dbe54f1e599
+  - enabled: 1
+    path: Assets/Scenes/Game Over.unity
+    guid: b14de82632f63ae418d29fbc64632cb2
   m_configObjects: {}
