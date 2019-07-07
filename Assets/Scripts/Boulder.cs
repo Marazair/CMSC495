@@ -43,6 +43,7 @@ public class Boulder : GridMover, Obstacle
         if (other.tag == "Hole") {
             objectCollider.enabled = false;
             other.enabled = false;
+            GetComponent<SpriteRenderer>().sortingOrder--;
         }
     }
 }
