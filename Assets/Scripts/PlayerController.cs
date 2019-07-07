@@ -53,6 +53,8 @@ public class PlayerController : GridMover
             if (GameManager.instance.HasNextScene()) {
                 GameManager.instance.lives++;
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                GameManager.instance.UpdateLevel();
+                GameManager.instance.UpdateLives();
             }
             else
                 SceneManager.LoadScene("Credits");
@@ -90,6 +92,7 @@ public class PlayerController : GridMover
         if(GameManager.instance.lives > 0) {
             Gem.ResetGems();
             Restart();
+            GameManager.instance.UpdateLives();
         }
         else
             GameManager.instance.GameOver();
