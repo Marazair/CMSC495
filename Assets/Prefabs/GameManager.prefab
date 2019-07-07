@@ -43,9 +43,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b4a0fa16b789074cb8f47733d4213a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lives: 3
-  isPlayerTurn: 1
-  levelText: {fileID: 9181665934386256389, guid: b6ab542068d47334e906151a8570349f,
-    type: 3}
-  livesText: {fileID: 306556238249690979, guid: 848a1d5374440c042a89eac10ae513bf,
-    type: 3}
