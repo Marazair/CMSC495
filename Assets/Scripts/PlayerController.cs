@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PlayerController : GridMover
 {
@@ -49,20 +48,14 @@ public class PlayerController : GridMover
 
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.tag == "Exit") {
-            Scene currentScene = SceneManager.GetActiveScene();
-            if (GameManager.instance.HasNextScene()) {
-                GameManager.instance.lives++;
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            }
-            else
-                SceneManager.LoadScene("Credits");
+            GameManager.instance.LoadNextLevel();
         }
 
         if (other.tag == "Projectile") {
-            LoseLife();
+            GameManager.instance.LoseLife();
         }
         if (other.tag == "Spike") {
-            LoseLife();
+            GameManager.instance.LoseLife();
         }
         if (other.tag == "Key") {
             if (hasKey == false) {
@@ -72,26 +65,10 @@ public class PlayerController : GridMover
             }
         }
         if (other.tag == "Hole") {
-            LoseLife();
+            GameManager.instance.LoseLife();
         }
         if (other.tag == "Kill") {
-            LoseLife();
+            GameManager.instance.LoseLife();
         }
-    }
-
-    private void Restart()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-
-    public void LoseLife()
-    {
-        GameManager.instance.lives--;
-        if(GameManager.instance.lives > 0) {
-            Gem.ResetGems();
-            Restart();
-        }
-        else
-            GameManager.instance.GameOver();
     }
 }
