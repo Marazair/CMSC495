@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Gem : MonoBehaviour
 {
-
     private GameObject specialWall;
 
     private static int gemsCollected = 0;

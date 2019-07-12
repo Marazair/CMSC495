@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/johnGallagherScene.unity
     guid: 3131f143e901dfe4980192f779750c86
   - enabled: 1
+    path: Assets/Scenes/FinalLevel.unity
+    guid: 1a9abb9d7554d7146967c0fc8bd17277
+  - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: 08563483719e7dd49b416dbe54f1e599
   - enabled: 1

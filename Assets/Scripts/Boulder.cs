@@ -5,6 +5,7 @@ using UnityEngine.Tilemaps;
 
 public class Boulder : GridMover, Obstacle
 {
+    private bool canMove = true;
     // Start is called before the first frame update
 
     // Update is called once per frame
@@ -39,11 +40,26 @@ public class Boulder : GridMover, Obstacle
         
     }
 
+    protected override void AttemptMove<T>(int xDir, int yDir) {
+        if (!canMove)
+            return;
+        base.AttemptMove<T>(xDir, yDir);
+    }
+
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.tag == "Hole") {
             objectCollider.enabled = false;
             other.enabled = false;
             GetComponent<SpriteRenderer>().sortingOrder--;
+        }
+        if (other.tag == "Spike") {
+            if (spriteRenderer.bounds.size.magnitude > other.GetComponent<SpriteRenderer>().bounds.size.magnitude) {
+                Destroy(other.gameObject);
+            }
+            else {
+                InterruptMove();
+                canMove = false;
+            }
         }
     }
 }

@@ -8,6 +8,7 @@ public abstract class GridMover : MonoBehaviour
     public LayerMask blockingLayer;
 
     protected Collider2D objectCollider;
+    protected SpriteRenderer spriteRenderer;
     private Rigidbody2D rb2D;
     private float inverseMoveTime;
     private bool moving;
@@ -17,6 +18,7 @@ public abstract class GridMover : MonoBehaviour
     protected virtual void Start()
     {
         objectCollider = GetComponent<Collider2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         rb2D = GetComponent<Rigidbody2D>();
         inverseMoveTime = 1f / moveTime;
         moving = false;
