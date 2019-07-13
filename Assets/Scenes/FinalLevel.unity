@@ -1288,12 +1288,12 @@ PrefabInstance:
     - target: {fileID: 1849550114112113070, guid: 4cf2807316399a349a1ff47953625128,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.33
+      value: 12.333
       objectReference: {fileID: 0}
     - target: {fileID: 1849550114112113070, guid: 4cf2807316399a349a1ff47953625128,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.15
+      value: 0.647
       objectReference: {fileID: 0}
     - target: {fileID: 1849550114112113070, guid: 4cf2807316399a349a1ff47953625128,
         type: 3}
@@ -9206,12 +9206,12 @@ PrefabInstance:
     - target: {fileID: 3880504617792987044, guid: 647bafa256dad894a9cbd2b79e6e24b7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 33.5
+      value: 32.5
       objectReference: {fileID: 0}
     - target: {fileID: 3880504617792987044, guid: 647bafa256dad894a9cbd2b79e6e24b7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.5
+      value: 15.5
       objectReference: {fileID: 0}
     - target: {fileID: 3880504617792987044, guid: 647bafa256dad894a9cbd2b79e6e24b7,
         type: 3}
@@ -32975,8 +32975,8 @@ Transform:
   - {fileID: 2108395393}
   - {fileID: 440908019}
   - {fileID: 394080143}
-  - {fileID: 419959479}
   - {fileID: 1127533627}
+  - {fileID: 419959479}
   - {fileID: 129020527}
   - {fileID: 114724970}
   m_Father: {fileID: 954559431}
@@ -33213,11 +33213,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 3114600362207028099, guid: 7a98ee8e386908e43b792cb58648b07a,
-        type: 3}
-      propertyPath: blockingLayer.m_Bits
-      value: 256
-      objectReference: {fileID: 0}
     - target: {fileID: 3114600362207028097, guid: 7a98ee8e386908e43b792cb58648b07a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -33272,6 +33267,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3114600362207028099, guid: 7a98ee8e386908e43b792cb58648b07a,
+        type: 3}
+      propertyPath: blockingLayer.m_Bits
+      value: 256
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a98ee8e386908e43b792cb58648b07a, type: 3}
@@ -35500,7 +35500,7 @@ PrefabInstance:
     - target: {fileID: 3880504617792987044, guid: 647bafa256dad894a9cbd2b79e6e24b7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.5
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3880504617792987044, guid: 647bafa256dad894a9cbd2b79e6e24b7,
         type: 3}
